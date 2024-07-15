@@ -25,8 +25,7 @@ const Hero = () => {
             <h1><span>Front-End</span> Developer</h1>
           </div>
           <div className="hero__left-desc">
-            <p>Conveniently customize proactive web services for leveraged without
-              continualliery aggregate fricctionle ou wellies richard.</p>
+            <p>Your company will reach high levels with me</p>
           </div>
           <div className="hero__left-btns">
             <button onClick={handleDownload}>Download CV</button>

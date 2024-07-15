@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 
-const Header = () => {
+const Header = ({ aboutRef, handleScroll, portfolioRef }) => {
 
     const [showsidebar, setShowSidebar] = useState(false)
 
@@ -23,20 +23,20 @@ const Header = () => {
             <nav className='header__nav  container'>
                 <div className={`header__nav-links ${showsidebar ? "show-sidebar" : ""}`}>
                     <NavLink to={"#"}>Home</NavLink>
-                    <NavLink to={"#"}>About</NavLink>
-                    <NavLink to={"#"}>Portfolio</NavLink>
+                    <NavLink onClick={()=> handleScroll(aboutRef)} to={"#"}>About</NavLink>
+                    <NavLink onClick={()=> handleScroll(portfolioRef)} to={"#"}>Portfolio</NavLink>
                     <NavLink to={"#"}>Resume</NavLink>
                     <NavLink to={"#"}>Contact</NavLink>
                 </div>
                 <button className='header__nav-download' onClick={handleDownload}>Download CV</button>
-                <button onClick={()=> setShowSidebar(true)} className='header__nav-burger'><RxHamburgerMenu /></button>
+                <button onClick={() => setShowSidebar(true)} className='header__nav-burger'><RxHamburgerMenu /></button>
             </nav>
             {
                 showsidebar
-                ?
-                <div onClick={()=> setShowSidebar(false)} className="overlay"></div>
-                :
-                <></>
+                    ?
+                    <div onClick={() => setShowSidebar(false)} className="overlay"></div>
+                    :
+                    <></>
 
             }
         </header>
